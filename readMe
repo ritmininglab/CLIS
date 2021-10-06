@@ -1,0 +1,48 @@
+-------------------------------------------------------
+
+Code for A Continual Learning Framework for Uncertainty-Aware Interactive Image Segmentation
+
+-------------------------------------------------------
+
+
+The code is written in Python 3.8. Based on the specified software version, OpenCV 3.0, scipy 1.5, Keras 2.0, Tensorflow 2.4, scikit-image 0.17, scikit-learn 0.23 libraries are required for the environment setting. All files need to be on the same directory in order for the algorithms to work.
+
+To run the algorithm, change the path to the current directory in the command window, and run the [main.py] file:
+
+main.py
+To user real user interaction, set realuser=1 in main.py; to use simulated user interaction, set realuser=0. For real user interaction, a pop-up window will be generated to allow user to click on the initial segmentation maps and provide the corresponding annotations. Users may provide clicks on the maps, and then type in the corresponding class labels (seperated by commas) of the clicked pixels. The code for classes are: 0-background, 1-lesion
+
+The main methods call the following functions:
+
+0. mBnn.m
+Includes methods that define the architecture of the network, customized block and layers of the network.
+
+1. mMRF.m
+Includes methods that define the architecture of the MRF.
+
+2. mEmbed.m
+Includes methods that extract high-level information of images.
+
+3. seg.m
+Performs semantic segmentation and refinement based on real user or simulated interactions.
+
+4. config.m
+Includes configurations.
+
+5. utilIO.m
+Includes utility methods that reading, writing and processing images.
+
+6. utilInteract.m
+Includes utility methods for collecting user annotations from user interface.
+
+7. utilUser.m
+Includes utility methods for processing user annotations.
+
+8. utilMisc.m
+Includes utility methods for importing and exporting model parameters.
+
+9. utilModel.m
+Includes utility methods for initializing model parameters, and storing kernel activation masks.
+
+10. utilSlic.m
+Includes utility methods for grouping similar pixels from images.
